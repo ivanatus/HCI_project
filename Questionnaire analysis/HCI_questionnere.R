@@ -48,5 +48,5 @@ print(shapiro.test(gesture_frustration)) #normally distributed
 print(shapiro.test(gesture_satisfaction)) #normally distributed
 
 #statistical tests
-print(wilcox.test(head_frustration, gesture_frustration, paired = TRUE))
+print(wilcox.test(head_frustration, gesture_frustration, paired = TRUE)) 
 print(wilcox.test(head_satisfaction, gesture_satisfaction, paired = TRUE))
