@@ -31,7 +31,7 @@ mean_gesture_satisfaction <- mean(gesture_satisfaction)
 median_gesture_satisfaction <- median(gesture_satisfaction)
 sd_gesture_satisfaction <- sd(gesture_satisfaction)
 
-#vizualization of descriptive statistics
+#visualization of descriptive statistics
 boxplot_satisfaction <- list(head = head_satisfaction, gesture = gesture_satisfaction)
 boxplot(boxplot_satisfaction, col = c("yellow", "blue"), names = c("Head control", "Gesture control"),
         main = "Boxplots of levels of satisfaction", ylab = "")
@@ -46,3 +46,7 @@ print(shapiro.test(head_frustration)) #not normally distributed
 print(shapiro.test(head_satisfaction)) #not normally distributed
 print(shapiro.test(gesture_frustration)) #normally distributed
 print(shapiro.test(gesture_satisfaction)) #normally distributed
+
+#statistical tests
+print(wilcox.test(head_frustration, gesture_frustration, paired = TRUE))
+print(wilcox.test(head_satisfaction, gesture_satisfaction, paired = TRUE))
