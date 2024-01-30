@@ -76,3 +76,7 @@ print(shapiro.test(time_head)) #not normally distributed
 print(shapiro.test(error_head)) #normally distributed
 print(shapiro.test(time_gesture)) #normally distributed
 print(shapiro.test(error_gesture)) #normally distributed
+
+#statistical tests
+print(wilcox.test(time_head, time_gesture, paired = TRUE)) #z=0, p=7.629e-06 --> statistically significant difference
+print(t.test(error_head, error_gesture, paired = TRUE)) #t(17)=0.14722, p=0.8847 --> not statistically significant difference
