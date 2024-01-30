@@ -31,6 +31,24 @@ mean_gesture_satisfaction <- mean(gesture_satisfaction)
 median_gesture_satisfaction <- median(gesture_satisfaction)
 sd_gesture_satisfaction <- sd(gesture_satisfaction)
 
+print(mean_age)
+
+print(mean_head_frustration)
+print(median_head_frustration)
+print(sd_head_frustration)
+
+print(mean_head_satisfaction)
+print(median_head_satisfaction)
+print(sd_head_satisfaction)
+
+print(mean_gesture_frustration)
+print(median_gesture_frustration)
+print(sd_gesture_frustration)
+
+print(mean_gesture_satisfaction)
+print(median_gesture_satisfaction)
+print(sd_gesture_satisfaction)
+
 #visualization of descriptive statistics
 boxplot_satisfaction <- list(head = head_satisfaction, gesture = gesture_satisfaction)
 boxplot(boxplot_satisfaction, col = c("yellow", "blue"), names = c("Head control", "Gesture control"),
