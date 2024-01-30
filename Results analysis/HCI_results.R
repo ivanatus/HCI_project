@@ -72,7 +72,7 @@ ggplot(error_data) +
   scale_y_continuous(expand = c(0.5, 0.2))
 
 #check if data is normally distributed
-print(shapiro.test(head_frustration)) #not normally distributed
-print(shapiro.test(head_satisfaction)) #not normally distributed
-print(shapiro.test(gesture_frustration)) #normally distributed
-print(shapiro.test(gesture_satisfaction)) #normally distributed
+print(shapiro.test(time_head)) #not normally distributed
+print(shapiro.test(error_head)) #normally distributed
+print(shapiro.test(time_gesture)) #normally distributed
+print(shapiro.test(error_gesture)) #normally distributed
