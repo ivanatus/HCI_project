@@ -7,6 +7,11 @@ questionnaire_data <- read.csv('HCI_questionnaire.csv', header=TRUE, sep=",")
 ages <- questionnaire_data$Age
 gender <- questionnaire_data$Gender
 
+gender_counts <- table(gender)
+
+# Create a pie chart
+pie(gender_counts, col = c("blue", "red"), main = "Gender Distribution")
+
 #relevant answers
 head_frustration <- questionnaire_data$Head_controller_frustration
 head_satisfaction <- questionnaire_data$Head_controller_satisfaction
