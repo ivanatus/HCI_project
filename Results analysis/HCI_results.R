@@ -161,13 +161,37 @@ ggplot(a_data) +
 
 b_data <- data.frame(
   name = c("Head b(1d)", "Gesture b(1d)", "Head b(2d)", "Gesture b(2d)"),
-  mean_value = c(mean_b1_head, mean_b1_gesture, mean_b1_head, mean_b2_gesture),
+  mean_value = c(mean_b1_head, mean_b1_gesture, mean_b2_head, mean_b2_gesture),
   sd_value = c(sd_b1_head, sd_b1_gesture, sd_b2_head, sd_b2_gesture)
 )
 ggplot(b_data) +
   geom_bar(aes(x = name, y = mean_value), stat = "identity", fill = "skyblue", alpha = 0.7) +
   geom_errorbar(aes(x = name, ymin = mean_value - sd_value, ymax = mean_value + sd_value), width = 0.4, colour = "orange", alpha = 0.9, size = 1.3) +
   labs(title = "Comparison of movement coefficient in univariate and bivariate models", x = "Tracking Modality", y = "Movement coefficient in ms/bit") +
+  theme_minimal() +
+  scale_y_continuous(expand = c(0.5, 0.2))
+
+b1_data <- data.frame(
+  name = c("Head b(1d)", "Gesture b(1d)"),
+  mean_value = c(mean_b1_head, mean_b1_gesture),
+  sd_value = c(sd_b1_head, sd_b1_gesture)
+)
+ggplot(b1_data) +
+  geom_bar(aes(x = name, y = mean_value), stat = "identity", fill = "skyblue", alpha = 0.7) +
+  geom_errorbar(aes(x = name, ymin = mean_value - sd_value, ymax = mean_value + sd_value), width = 0.4, colour = "orange", alpha = 0.9, size = 1.3) +
+  labs(title = "Comparison of movement coefficient in univariate models", x = "Tracking Modality", y = "Movement coefficient in ms/bit") +
+  theme_minimal() +
+  scale_y_continuous(expand = c(0.5, 0.2))
+
+b2_data <- data.frame(
+  name = c("Head b(2d)", "Gesture b(2d)"),
+  mean_value = c(mean_b2_head, mean_b2_gesture),
+  sd_value = c(sd_b2_head, sd_b2_gesture)
+)
+ggplot(b2_data) +
+  geom_bar(aes(x = name, y = mean_value), stat = "identity", fill = "skyblue", alpha = 0.7) +
+  geom_errorbar(aes(x = name, ymin = mean_value - sd_value, ymax = mean_value + sd_value), width = 0.4, colour = "orange", alpha = 0.9, size = 1.3) +
+  labs(title = "Comparison of movement coefficient in bivariate models", x = "Tracking Modality", y = "Movement coefficient in ms/bit") +
   theme_minimal() +
   scale_y_continuous(expand = c(0.5, 0.2))
 

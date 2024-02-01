@@ -9,7 +9,7 @@ gender <- questionnaire_data$Gender
 
 gender_counts <- table(gender)
 
-# Create a pie chart
+#demographic data visualization
 pie(gender_counts, col = c("blue", "red"), main = "Gender Distribution")
 
 #relevant answers
@@ -71,5 +71,5 @@ print(shapiro.test(gesture_frustration)) #normally distributed
 print(shapiro.test(gesture_satisfaction)) #normally distributed
 
 #statistical tests
-print(wilcox.test(head_frustration, gesture_frustration, paired = TRUE)) 
-print(wilcox.test(head_satisfaction, gesture_satisfaction, paired = TRUE))
+print(wilcox.test(head_frustration, gesture_frustration, paired = TRUE)) #V = 15.5, p-value = 0.03651
+print(wilcox.test(head_satisfaction, gesture_satisfaction, paired = TRUE)) #V = 74, p-value = 0.005918
